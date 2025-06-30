@@ -1,0 +1,86 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{14.5pt}
+
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{Literature Review – DAGGER}
+
+\title{Literature Review:\\\textit{DAGGER: Data Augmentation for Generative Gaming in Enriched Realms}}
+\author{Noa JELSCH\\CESI École d'Ingénieurs}
+\date{June 2025}
+
+\begin{document}
+\maketitle
+
+\section*{Summary}
+
+This literature review discusses the 2024 paper titled \textbf{DAGGER: Data Augmentation for Generative Gaming in Enriched Realms}, authored by Chris Callison-Burch, Ajay Patel, James Dennis, and Andrew Zhu from the University of Pennsylvania. The paper introduces a novel dataset and methodology aimed at enriching text-based game environments through large language model (LLM) augmentation. DAGGER extends the LIGHT dataset with GPT-4-generated characters, objects, and location-specific fiction, resulting in a corpus of over 259,000 words. It is designed to enhance generative and interpretive models in interactive storytelling.
+
+\section*{Objectives and Motivation}
+
+The authors aim to:
+\begin{itemize}
+  \item Address the lack of richly annotated datasets for training narrative-capable game agents.
+  \item Enhance the connection between game state representation and narrative immersion.
+  \item Provide a testbed for dual-directional modeling: generating stories from states and inferring states from fiction.
+\end{itemize}
+This work builds upon earlier imitation learning efforts by integrating narrative understanding into agent design, allowing for more human-like and believable game interactions.
+
+\section*{Methodology}
+
+\begin{enumerate}
+  \item \textbf{Data Augmentation}: Using GPT-4 through the DataDreamer tool, the LIGHT environment is enriched with context-aware fictional descriptions, characters, and items.
+  \item \textbf{Dataset Design}: The final DAGGER corpus includes game state records, natural language narratives, and links between elements across rooms and scenes.
+  \item \textbf{Model Training}: Two transformer-based models are trained:
+    \begin{itemize}
+      \item A forward generator to produce fiction from structured state data.
+      \item An inverse model to reconstruct game states from generated narratives.
+    \end{itemize}
+  \item \textbf{Evaluation}: Models are evaluated using perplexity and accuracy metrics to assess story coherence and state fidelity.
+\end{enumerate}
+
+\section*{Results}
+
+\begin{itemize}
+  \item Enriched data improves narrative variety and consistency in forward generation.
+  \item Inverse models trained on DAGGER can reconstruct complex states from narratives with notable accuracy.
+  \item LLM-generated data offers scalable and controllable improvements over manual annotation, making DAGGER a useful training resource.
+\end{itemize}
+
+\section*{Discussion}
+
+DAGGER exemplifies how synthetic augmentation can support imitation and generative learning in game development. By coupling structured state representations with grounded fiction, it enhances both training data quality and narrative diversity. The dataset promotes future research into context-aware NPC behavior and interactive narrative engines.
+
+\textbf{Limitations} include:
+\begin{itemize}
+  \item Focus on text-only environments; no graphical or physical action grounding.
+  \item Absence of player interaction studies or extrinsic task evaluation.
+  \item Dependence on proprietary models (e.g., GPT-4) may limit reproducibility.
+\end{itemize}
+
+\section*{Conclusion and Future Work}
+
+DAGGER represents a significant advancement in narrative-rich game AI training. Future directions include:
+\begin{itemize}
+  \item Adapting the framework for multimodal games.
+  \item Incorporating human evaluations or user studies.
+  \item Merging DAGGER's output with behavioural cloning pipelines for full-agent training.
+\end{itemize}
+
+\section*{Reference}
+
+\noindent Callison-Burch, C., Patel, A., Dennis, J., \& Zhu, A. (2024). \textit{DAGGER: Data Augmentation for Generative Gaming in Enriched Realms}. University of Pennsylvania. Retrieved from \url{https://www.cis.upenn.edu/~ccb/publications/dagger.pdf}
+
+\end{document}

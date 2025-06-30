@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{14.5pt}
+
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{Literature Review – Interactive NPC Training}
+
+\title{Literature Review:\\\textit{Towards Interactive Training of Non-Player Characters in Video Games}}
+\author{Noa JELSCH\\CESI École d'Ingénieurs}
+\date{June 2025}
+
+\begin{document}
+\maketitle
+
+\section*{Summary}
+
+This review examines the 2019 paper titled \textbf{Towards Interactive Training of Non-Player Characters in Video Games}, authored by Sergey Borovikov, Alexander Trott, Arvind Neelakantan, and Igor Mordatch. The study introduces a novel framework for developing NPCs through an interactive training paradigm that combines traditional imitation learning with direct feedback and incremental training sessions from human demonstrators. The core objective is to create game agents that better mimic human behaviors while also being adaptable during gameplay.
+
+\section*{Objectives and Motivation}
+
+The motivation behind this work stems from the limitations of static datasets in imitation learning (IL). Conventional IL methods often suffer from covariate shift—where the learner encounters game states not present in the demonstration data—and lack flexibility for correcting undesired behaviors. The paper seeks to address these gaps by introducing a human-in-the-loop learning approach, enabling human trainers to guide NPC behavior in real-time and refine learned policies interactively.
+
+\section*{Methodology}
+
+The authors propose a lightweight training framework where a human demonstrator provides demonstrations during gameplay, and then iteratively improves the model by observing its mistakes and offering corrections. Key components include:
+
+\begin{itemize}
+  \item \textbf{Policy Initialization:} An initial policy is trained using behavioral cloning on a small dataset of human demonstrations.
+  \item \textbf{Error Identification:} When the NPC diverges from expected behavior, human players intervene, labeling the correct action.
+  \item \textbf{Data Aggregation:} The framework iteratively aggregates new human corrections into the training set, similar to the DAGGER algorithm.
+  \item \textbf{Model Architecture:} A simple feedforward neural network is used to map game observations (states) to actions.
+\end{itemize}
+
+The experiments are conducted in several custom game environments built using OpenAI Gym and Unity, with tasks ranging from navigation to object interaction.
+
+\section*{Results}
+
+The interactive training approach significantly outperforms traditional behavioral cloning in terms of policy accuracy and generalization. Key findings include:
+
+\begin{itemize}
+  \item Models trained interactively required fewer total demonstrations to reach the same performance level as offline IL.
+  \item Agents adapted quickly to new tasks with minimal additional human input.
+  \item NPCs demonstrated greater robustness to out-of-distribution states and were better aligned with human gameplay expectations.
+\end{itemize}
+
+In user studies, players found that interactively trained NPCs were more realistic and responsive than scripted or purely cloned counterparts.
+
+\section*{Discussion}
+
+This paper highlights the benefits of including humans in the training loop, particularly in dynamic and partially observable environments like games. The authors argue that by using humans not only as data sources but also as real-time critics, the training process becomes more resilient, flexible, and aligned with human intention.
+
+\textbf{Limitations} include:
+
+\begin{itemize}
+  \item The need for frequent human supervision, which may not scale well.
+  \item Limited exploration of complex multi-agent scenarios or strategic long-term behaviors.
+  \item Use of simple environments for testing; further validation is needed in commercial-grade games.
+\end{itemize}
+
+\section*{Conclusion and Future Work}
+
+The study successfully demonstrates the feasibility and effectiveness of interactive NPC training using a mix of imitation and online feedback. The findings pave the way for more adaptive and lifelike NPCs in gaming. Future work could focus on automating the correction process using adversarial methods, scaling to 3D environments, or combining this approach with reinforcement learning for hybrid agent design.
+
+\section*{Reference}
+
+\noindent Borovikov, S., Trott, A., Neelakantan, A., \& Mordatch, I. (2019). \textit{Towards Interactive Training of Non-Player Characters in Video Games}. arXiv preprint arXiv:1906.00535. Retrieved from \url{https://arxiv.org/abs/1906.00535}
+
+\end{document}

@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{14.5pt}
+
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{Literature Review – Bayesian Imitation Learning}
+
+\title{Literature Review:\\\textit{Bayesian Imitation Learning in Game Characters}}
+\author{Noa JELSCH\\CESI École d'Ingénieurs}
+\date{June 2025}
+
+\begin{document}
+\maketitle
+
+\section*{Summary}
+
+This literature review analyzes the 2005 paper titled \textbf{Bayesian Imitation Learning in Game Characters}, authored by Christian Thurau, Marcel Paczian, Gerhard Sagerer, and Christian Bauckhage. The article presents a method for learning believable game character behaviors using a probabilistic framework grounded in Bayesian reasoning. Unlike traditional scripted AI, this method leverages statistical learning from human player data to produce adaptive, realistic non-player character (NPC) actions in dynamic environments.
+
+\section*{Objectives and Motivation}
+
+The study addresses the limitations of deterministic or finite-state based NPC behaviors commonly found in games. Such models lack adaptability and fail to capture the variability seen in human gameplay. The authors aim to provide a model that:
+\begin{itemize}
+  \item Mimics observed human behavior using statistical learning.
+  \item Incorporates uncertainty and variability to avoid rigid behavior.
+  \item Can generalize across different gameplay scenarios.
+\end{itemize}
+
+This is particularly useful for games that aim to increase immersion through lifelike NPCs capable of learning from demonstration rather than hard-coded rules.
+
+\section*{Methodology}
+
+The authors propose a \textbf{Bayesian imitation learning} approach that models the likelihood of an action given a certain game state. The process includes:
+
+\begin{itemize}
+  \item \textbf{Observation}: Player behaviors are recorded during gameplay, capturing state-action pairs.
+  \item \textbf{State Representation}: States are simplified into feature vectors that encode relevant spatial and contextual information.
+  \item \textbf{Bayesian Learning}: The model estimates the posterior probability of actions using Bayes' theorem, allowing the NPC to infer the most likely action in a given context.
+  \item \textbf{Inference and Action Selection}: During gameplay, the NPC samples from the learned distribution to choose actions that mirror player behavior.
+\end{itemize}
+
+The implementation is tested on a grid-based maze environment where agents must navigate and make decisions based on local observations.
+
+\section*{Results}
+
+Key outcomes from the experiments include:
+\begin{itemize}
+  \item The NPCs demonstrated behavior that closely mimicked the path choices and movement styles of human players.
+  \item The probabilistic approach enabled the NPCs to respond flexibly to unseen states rather than failing or reverting to defaults.
+  \item The system generalized well across varying maze configurations.
+\end{itemize}
+
+Visual inspection and quantitative analysis confirmed that Bayesian imitation outperformed simple rule-based agents in human-likeness and behavioral diversity.
+
+\section*{Discussion}
+
+The main advantage of the Bayesian framework is its capacity to encode uncertainty, enabling a variety of plausible actions instead of deterministic responses. This creates more realistic behavior that varies slightly each time, echoing human decision-making variability.
+
+Furthermore, the model is data-efficient, requiring only modest amounts of training data to produce competent behavior. However, some limitations are noted:
+
+\begin{itemize}
+  \item The approach assumes a fixed and predefined state representation, which may limit its scalability to complex 3D games or more abstract tasks.
+  \item The method lacks memory or sequential planning, relying only on the current state for decision-making.
+  \item Evaluation is conducted on simplified game environments, raising questions about transferability to commercial-grade games.
+\end{itemize}
+
+\section*{Conclusion and Future Work}
+
+This paper represents an early and influential effort in applying probabilistic models to character AI in games. By incorporating Bayesian reasoning, the authors show that it is possible to create NPCs that exhibit believable and varied behaviors while remaining computationally efficient.
+
+Future directions may include:
+\begin{itemize}
+  \item Integration with temporal models (e.g., HMMs or RNNs) to capture sequential dependencies.
+  \item Expansion to multiplayer or adversarial scenarios.
+  \item Hybridization with reinforcement learning for agents that both imitate and optimize.
+\end{itemize}
+
+\section*{Reference}
+
+\noindent Thurau, C., Paczian, M., Sagerer, G., \& Bauckhage, C. (2005). \textit{Bayesian Imitation Learning in Game Characters}. International Journal of Intelligent Systems Technologies and Applications (IJISTA), 2005.
+
+\end{document}

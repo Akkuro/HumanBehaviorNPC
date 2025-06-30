@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{14.5pt}
+
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{Literature Review – IRL for Video Games}
+
+\title{Literature Review:\\\textit{Inverse Reinforcement Learning for Video Games}}
+\author{Noa JELSCH\\CESI École d’Ingénieurs}
+\date{June 2025}
+
+\begin{document}
+\maketitle
+
+\section*{Summary}
+
+This literature review summarizes the 2018 paper titled \textbf{Inverse Reinforcement Learning for Video Games}, authored by George Tucker, Rowan Gleave, and Stuart Russell. The work addresses a central problem in AI-driven behavior modeling: how to learn realistic, human-like agent policies in complex environments without explicit reward functions. The paper proposes applying Inverse Reinforcement Learning (IRL) to infer underlying reward structures from human gameplay demonstrations in video games. It builds on Adversarial IRL (AIRL) and adapts it to high-dimensional environments like Atari.
+
+\section*{Objectives and Motivation}
+
+Traditional Reinforcement Learning (RL) can produce highly effective agents but often leads to inhuman or unnatural behavior, particularly when rewards are sparse or manually engineered. IRL shifts the focus to recovering the reward function from human demonstrations, thereby enabling agents to learn behavior that aligns more closely with human expectations and style. This is especially useful in video games where believability and immersion matter more than optimal performance.
+
+\section*{Methodology}
+
+The method consists of:
+\begin{itemize}
+  \item Collecting demonstration data from human players in two games: \textit{Catcher} and \textit{Atari Enduro}.
+  \item Compressing high-dimensional visual inputs using an autoencoder to a latent space.
+  \item Using Adversarial IRL to train a discriminator that distinguishes expert behavior from policy-generated behavior.
+  \item Using the learned reward function to guide policy learning via Trust Region Policy Optimization (TRPO).
+\end{itemize}
+
+\section*{Results}
+
+\begin{itemize}
+  \item In Catcher (simple game), IRL reproduces expert-like behavior with high fidelity.
+  \item In Atari Enduro, the learned reward function generalizes well and produces more natural driving behavior, though not yet achieving expert-level performance.
+  \item The inferred reward function performs better than manually engineered ones on generalization to new states.
+\end{itemize}
+
+\section*{Discussion}
+
+This study validates IRL as a powerful alternative to hand-crafted reward design, particularly when aiming for realism and human-likeness. Key insights include:
+\begin{itemize}
+  \item Latent space embeddings improve efficiency in high-dimensional visual environments.
+  \item IRL helps avoid the reward hacking common in traditional RL.
+\end{itemize}
+
+\textbf{Limitations} include:
+\begin{itemize}
+  \item Computational cost is significant.
+  \item Performance depends heavily on the quality/diversity of demonstrations.
+  \item The reward function remains difficult to interpret or verify.
+\end{itemize}
+
+\section*{Conclusion and Future Work}
+
+This paper is an important step toward training human-like NPCs using data-efficient and interpretable methods. Future directions may include:
+\begin{itemize}
+  \item Combining IRL with preference learning.
+  \item Extending the model to multiplayer or collaborative environments.
+  \item Evaluating via human-player perception studies.
+\end{itemize}
+
+\section*{Reference}
+
+\noindent Tucker, G., Gleave, R., \& Russell, S. (2018). \textit{Inverse Reinforcement Learning for Video Games}. arXiv preprint \href{https://arxiv.org/abs/1810.10593}{arXiv:1810.10593}.
+
+\end{document}

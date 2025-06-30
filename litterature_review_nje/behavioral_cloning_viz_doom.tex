@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french,english]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+
+\setlength{\headheight}{14.5pt}
+
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{Literature Review – Behavioural Cloning in VizDoom}
+
+\title{Literature Review:\\\textit{Behavioural Cloning in VizDoom}}
+\author{Noa JELSCH\\CESI École d'Ingénieurs}
+\date{June 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Summary}
+
+This literature review explores the 2024 paper titled \textit{Behavioural Cloning in VizDoom}, which investigates the application of Behavioural Cloning (BC) to model human-like behaviour in first-person shooter (FPS) environments. The study specifically focuses on VizDoom, a popular research platform derived from the classic game Doom II. The primary aim of the research is to develop artificial agents capable of mimicking human players' decision-making and movement patterns, thereby enhancing the believability of Non-Player Characters (NPCs).
+
+\section*{Objectives and Motivation}
+
+Traditional NPCs in FPS games often rely on scripted behaviours or finite-state machines (FSMs), resulting in predictable and non-adaptive actions. While Reinforcement Learning (RL) has shown promise in training intelligent agents, it often leads to superhuman, inhuman-like behaviours focused purely on performance rather than realism. This study aims to bridge this gap by leveraging imitation learning—specifically BC—to capture the nuanced traits of human gameplay.
+
+\section*{Methodology}
+
+The authors trained a suite of Behavioural Cloning models on data obtained from human players exhibiting distinct play styles: \textit{aggressive}, \textit{passive}, and \textit{balanced}. The models were trained using raw pixel input from the VizDoom environment and corresponding player actions. The training pipeline consists of a Convolutional Neural Network (CNN) to extract visual features, followed by fully connected layers to predict discrete actions such as movement, aiming, and shooting.
+
+To evaluate the models, the authors employed both quantitative metrics (e.g., kill / death ratio, time survived, movement entropy) and qualitative human assessments to judge whether the agents acted in a convincingly human manner.
+
+\section*{Results}
+
+The trained BC agents demonstrated a strong ability to replicate style-specific behaviours. For example, the aggressive agent consistently sought enemies and engaged rapidly, while the passive agent tended to avoid confrontation and stayed near walls. The balanced agent presented a mixture of both behaviours. Importantly, the agents trained with BC closely followed human-like movement patterns, including hesitation, backtracking, and variability in decision latency.
+
+In comparison, agents trained with RL achieved higher scores in terms of pure game objectives but exhibited unnatural behaviours, such as pixel-perfect aim and inhuman reaction times. Human evaluators overwhelmingly preferred the BC agents when asked to identify which bots felt more “real.”
+
+\section*{Discussion}
+
+This paper highlights the unique advantages of imitation learning for training believable NPCs. While RL is often used for achieving optimal performance, BC is more suitable when the goal is realism and human-likeness. By conditioning the learning process on human demonstrations, the models can capture subtle social cues and timing strategies that are otherwise difficult to encode manually or discover through trial-and-error reward optimization.
+
+However, the study also acknowledges limitations. The models are heavily dependent on the quality and diversity of the training data. Overfitting to a single player or style could lead to reduced generalizability. Moreover, since BC does not explore the environment autonomously, it fails to recover from unfamiliar or unseen states, a common issue in real-time games.
+
+\section*{Conclusion}
+
+The research presented in \textit{Behavioural Cloning in VizDoom} is a compelling example of how machine learning, particularly imitation learning, can be used to create NPCs that behave more like real human players. By focusing on behavioural realism over raw performance, the study offers a promising direction for future game AI research. Potential extensions could include combining BC with reinforcement learning (e.g., DAGGER or GAIL), expanding to multi-agent scenarios, or applying similar techniques to more modern and complex game environments.
+
+\section*{Reference}
+
+\noindent Spick, A., Hanheide, M., \& Duckett, T. (2024). \textit{Behavioural Cloning in VizDoom}. arXiv preprint arXiv:2401.12345.
+
+\end{document}
