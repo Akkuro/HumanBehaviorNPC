@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{babel}
+\geometry{margin=2.5cm}
+
+\title{Summary of Convolutional Neural Networks for Image Classification}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+This document provides an in-depth analysis of Convolutional Neural Networks (CNNs), which are currently among the most effective methods in computer vision, particularly for image classification tasks. Inspired by the organization of the human visual cortex, CNNs are capable of automatically learning discriminative features at multiple levels of depth, thus avoiding the need for manual feature extraction.
+
+The typical structure of a CNN is described, comprising several types of layers: convolutional layers that apply filters to extract local patterns; pooling layers (such as max pooling or average pooling) that reduce dimensionality and increase robustness to translations; nonlinear activation functions like ReLU, which introduce non-linearity; and fully connected layers that perform the final classification. Each step is explained mathematically and functionally, demonstrating how these layers progressively transform the input data.
+
+The importance of data preparation is emphasized, particularly data augmentation techniques that help prevent overfitting and improve generalization. The document also discusses regularization methods such as dropout, which randomly deactivate neurons during training to reduce over-dependence on particular units.
+
+Modern optimization algorithms are presented, including stochastic gradient descent (SGD) with momentum, Adam, and RMSProp, explaining how these methods minimize the loss function, thus ensuring efficient and rapid learning.
+
+A comparative review of influential CNN architectures is provided: LeNet, which popularized the concept; AlexNet, which revolutionized the field in 2012 by leveraging GPU power; VGG, which highlighted depth through smaller layers; and ResNet, which introduced residual connections to address the degradation problem in very deep networks.
+
+Finally, the document illustrates the significant impact of CNNs across various applications such as facial recognition, object detection and classification, medical semantic segmentation, and autonomous driving systems. However, it also mentions current limitations, including the high demand for annotated data, heavy computational requirements, and the lack of model interpretability.
+
+\end{document}

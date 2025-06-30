@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+\title{Summary of "Exploring AI Benchmarks and Leaderboards"}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Benchmarks in artificial intelligence are essential tools that enable standardized evaluation of model performance. A benchmark typically consists of a dataset, a set of tasks, evaluation metrics, and reference models. It allows for fair and reproducible comparison between models, fostering innovation and progress in field.
+
+The main goals of benchmarks include:
+\begin{itemize}
+  \item Standardizing evaluations (Ensuring all models are tested under the same conditions),
+  \item Promoting scientific reproducibility (Enabling other researcher to replicate results),
+  \item Measuring technological advancements (Tracking progress over time in model performance),
+  \item Encouraging research through globally shared challenge (Fostering collaboration and competition within the AI community).
+\end{itemize}
+
+A benchmark is usually based on four fundamental components:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item Dataset: a corpus of data (images, texts, sounds, videos) on which the model will be tested.
+  \item Task: for example, classifying an image, answering a question, or translating text.
+  \item Metrics: these quantify performance (accuracy, F1-score, BLEU score, latency).
+  \item Baselines: reference performances, human or algorithmic, used for comparison.
+\end{itemize}
+
+Benchmarks are categorized according to what they aim to measure. Some evaluate raw performance, others focus on robustness to noise or adversarial attacks. Some target computational or energy efficiency (MLPerf Power), while others address ethical and societal issues, such as fairness across demographic groups or bias mitigation (e.g., FairFace, Gender Shades).
+
+Each subfield of artificial intelligence has its own iconic benchmarks. In natural language processing (NLP), for instance:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item GLUE, SuperGLUE, SQuAD, and XTREME test skills like comprehension, translation, or named entity recognition.
+\end{itemize}
+
+In computer vision:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item ImageNet, COCO, and CIFAR are well-established references.
+\end{itemize}
+
+In speech recognition and audio processing:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item LibriSpeech and VoxCeleb are frequently used datasets.
+\end{itemize}
+
+In reinforcement learning:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item OpenAI Gym and MuJoCo provide simulated environments to train and evaluate intelligent agents.
+\end{itemize}
+
+More complex approaches like \textbf{multimodality} (simultaneous processing of text, images, audio) rely on benchmark such as:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item VQA, CLIP, and MS COCO.
+\end{itemize}
+
+Other benchmark evaluate capabilities such as:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item generalization: WILDS, DomainNet,
+  \item reasoning: BIG-Bench, ARC, MMLU,
+  \item creativity, explainability, or alignment with human intent.
+\end{itemize}
+
+Some benchmarks also test human-AI interaction through:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item graphical user interfaces (MiniWoB++, RoboDesk),
+  \item web navigation (WebGPT),
+  \item automated task execution (RPA: Robotic Process Automation).
+\end{itemize}
+
+These benchmark are often accompanied by \textbf{leaderboards} public rankings of top performing models based on their scores. These rankings include:
+\begin{itemize}[topsep=5pt,itemsep=1pt]
+  \item the name of the team,
+  \item the methodology used,
+  \item the metrics achieved,
+  \item and sometimes a link to the code or scientific paper.
+\end{itemize}
+
+Leaderboards play a central role in AI research: they track progress, indicate the state of the art for a given task, and promote transparency and healthy competition among researchers. They are hosted on platforms such as:
+\begin{itemize}[topsep=2pt,itemsep=1pt]
+  \item Hugging Face,
+  \item Papers With Code,
+  \item or directly on benchmark websites (GLUE, ImageNet, BIG-Bench, MMLU).
+\end{itemize}
+
+In conclusion, benchmarks and leaderboards are foundational pillars of AI research. They enable rigorous evaluation, promote innovation, ensure reproducibility, and help guarantee that developed models meet high standards in terms of performance, robustness, fairness, and practical utility.
+
+\end{document}

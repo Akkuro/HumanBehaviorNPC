@@ -1,0 +1,113 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Detailed Summary of \\ 
+\textit{The Challenge of Believability in Video Games: Definitions, Agents’ Models and Imitation Learning}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\url{https://arxiv.org/pdf/1009.0451}
+
+\section{Introduction}
+
+This paper addresses the concept of \textbf{believability} in video games, defined as the ability of an artificial agent (NPC, bot) to convince a player that it is controlled by a human. This issue is crucial for enhancing immersion and interaction quality in video games.
+
+Two key notions related to immersion are distinguished:
+
+\begin{itemize}
+    \item \textbf{Immersion}: An objective phenomenon related to technology (graphics, sound, haptic feedback) that physically places the player in a virtual environment.
+    \item \textbf{Presence}: A subjective, psychological sensation of "being there" inside the virtual world.
+\end{itemize}
+
+Believability is an important factor to strengthen presence by making virtual agents behave in a credible and natural way.
+
+\section{Definition of Believability}
+
+The paper clarifies that believability differs from realism:
+
+\begin{itemize}
+    \item \textbf{Realism} aims to accurately reproduce real-world phenomena.
+    \item \textbf{Believability} seeks to produce the illusion that the agent is human-controlled, which may include exaggerated or stylized behaviors.
+\end{itemize}
+
+In essence, a \textit{believable} agent generates a subjective impression of human-like behavior, even if not strictly realistic.
+
+\section{Criteria for Believability}
+
+Several factors influence a player's perception of an agent's believability:
+
+\begin{itemize}
+    \item \textbf{Controlled unpredictability}: Agents must avoid repetitive, predictable patterns but remain consistent enough to avoid appearing chaotic.
+    \item \textbf{Learning capability}: Agents able to learn and adapt to the environment or player style enhance their perceived humanness.
+    \item \textbf{Behavioral coherence}: The agent should exhibit consistent behavior aligned with a personality or strategy.
+    \item \textbf{Controlled exaggeration}: Sometimes, slightly exaggerated or caricatured traits help reinforce the impression of humanity.
+\end{itemize}
+
+\section{Agent Models in Video Games}
+
+The paper analyzes several classical agent models used in game AI:
+
+\subsection{Reactive Agents}
+Respond immediately to stimuli without long-term planning. Simple but limited.
+
+\subsection{Deliberative Agents}
+Maintain internal world models and plan actions toward long-term goals. More complex and realistic.
+
+\subsection{Hybrid Agents}
+Combine reactive and deliberative approaches, e.g., reactive navigation with strategic planning.
+
+\subsection{Industry-standard Models}
+\begin{itemize}
+    \item \textbf{Finite State Machines (FSM)}: State-based transitions, simple to implement.
+    \item \textbf{Behavior Trees}: Modular and flexible hierarchical decision-making.
+\end{itemize}
+
+\subsection{Research-oriented Cognitive Architectures}
+Models such as BDI (Belief-Desire-Intention), Soar, ACT-R simulate human cognitive processes, promising richer behaviors but with higher computational cost.
+
+\section{Imitation Learning}
+
+A significant part of the paper focuses on imitation learning as a promising method for building believable agents.
+
+\subsection{Principle}
+Agents observe human players and learn to replicate their actions, bypassing the need for explicit programming of complex behaviors.
+
+\subsection{Techniques}
+Includes supervised machine learning and reinforcement learning. Challenges include extracting relevant features and generalizing to unseen scenarios.
+
+\subsection{Advantages}
+\begin{itemize}
+    \item Better adaptation to human-like styles.
+    \item Increased behavioral diversity.
+    \item Reduced development time.
+\end{itemize}
+
+\subsection{Challenges}
+\begin{itemize}
+    \item Difficulty in quantifying believability objectively.
+    \item Requires substantial human gameplay data.
+    \item Risks of overfitting: agents copying too literally without adaptation.
+\end{itemize}
+
+\section{Proposed Methodology}
+
+The authors propose a two-step approach for creating believable agents:
+
+\begin{enumerate}
+    \item Precisely define believability criteria in the game context, specifying desired human-like behaviors.
+    \item Design a suitable agent model and learning algorithm (e.g., imitation learning), then evaluate credibility through subjective player feedback.
+\end{enumerate}
+
+\section{Conclusion}
+
+Believability is key to enhancing immersion in video games. It focuses on subjective human perception rather than strict realism. Traditional models often fall short in producing believable agents, while imitation learning offers promising avenues. Challenges remain, including objective evaluation, dynamic adaptation, and managing computational complexity.
+
+\end{document}

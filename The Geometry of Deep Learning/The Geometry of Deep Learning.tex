@@ -1,0 +1,118 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\title{Detailed Summary:\\ \textit{How Deep Learning Works — The Geometry of Deep Learning}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{1. Geometric Framework}
+
+This paper explores deep learning through the lens of \textbf{differential geometry}. The central idea is that deep networks can be interpreted as constructing and traversing \textbf{curved manifolds} in high-dimensional space. Analogies are drawn with:
+
+\begin{itemize}
+    \item \textbf{Quantum computation geometry}: where computation corresponds to paths on a unitary manifold.
+    \item \textbf{Diffeomorphic template matching}: where transformations deform data smoothly via geodesics.
+\end{itemize}
+
+Deep networks, then, can be viewed as learning complex curves on these transformation manifolds.
+
+\section*{2. CNNs as Geodesic Approximators}
+
+Convolutional Neural Networks (CNNs) approximate geodesics by composing many small, local transformations:
+
+\begin{itemize}
+    \item \textbf{Shallow networks} struggle to approximate highly curved mappings.
+    \item \textbf{Deep networks} provide the needed resolution to trace long and complex trajectories on the manifold.
+\end{itemize}
+
+The CNN layers sequentially \textbf{untangle and flatten} the manifold, simplifying classification in later layers.
+
+\section*{3. Residual Networks (ResNets)}
+
+ResNets are interpreted as \textbf{local geodesic approximators}:
+
+\begin{itemize}
+    \item Each residual block performs a near-identity transformation: $x_{l+1} = x_l + F(x_l)$.
+    \item This structure mimics integration of a continuous path, improving training stability and expressiveness.
+\end{itemize}
+
+ResNets avoid the vanishing gradient problem and facilitate deep learning by approximating smooth trajectories.
+
+\section*{4. Geometry Across Architectures}
+
+Other architectures can be reinterpreted geometrically:
+
+\begin{itemize}
+    \item \textbf{Recursive networks} resemble exponential mappings on transformation groups.
+    \item \textbf{RNNs/LSTMs} trace curves or surfaces through temporal and hierarchical space.
+    \item \textbf{GANs} involve simultaneous mappings on the generator and discriminator manifolds, often unstable due to adversarial curvature.
+    \item \textbf{Equilibrium propagation} uses geodesic analogies to perform gradient-based optimization.
+\end{itemize}
+
+\section*{5. The Manifold Hypothesis}
+
+The \textbf{manifold hypothesis} states that high-dimensional data (e.g. images, sounds) lie near a low-dimensional manifold embedded in high-dimensional space. Deep learning benefits from this:
+
+\begin{itemize}
+    \item \textbf{Autoencoders} learn to project noisy inputs back onto this manifold.
+    \item \textbf{Deep networks} flatten, stretch, and straighten these manifolds to make classification easier.
+\end{itemize}
+
+\section*{6. Geometric Deep Learning and Symmetries}
+
+Recent developments exploit the structure of non-Euclidean domains:
+
+\begin{itemize}
+    \item \textbf{Equivariance to symmetry groups} (e.g. rotations, translations) reduces redundancy in learning.
+    \item \textbf{Graph Neural Networks}, \textbf{Spherical CNNs}, and manifold-aware models process data on curved or discrete geometries.
+    \item These methods extend deep learning to domains like molecules, social networks, 3D shapes, etc.
+\end{itemize}
+
+\section*{7. Implications for Design and Optimization}
+
+\begin{itemize}
+    \item \textbf{Depth}: allows approximation of complex curved transformations.
+    \item \textbf{Skip connections}: improve optimization by stabilizing geometric paths.
+    \item \textbf{Feature disentangling}: progressively flattens and unrolls manifolds for better generalization.
+\end{itemize}
+
+Understanding the geometry of data and transformations can guide architecture design, training dynamics, and explain model behavior.
+
+\section*{Summary Table}
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Concept} & \textbf{Geometric Interpretation} \\
+\hline
+CNN & Curve on transformation manifold \\
+ResNet & Sequence of near-identity geodesic steps \\
+Autoencoder & Projection onto low-dimensional manifold \\
+RNN / LSTM & Temporal surface tracing on manifold \\
+GAN & Dual adversarial paths on transformation manifold \\
+Symmetry & Group-invariant learning via equivariance \\
+Graph / Mesh CNNs & Learning on non-Euclidean spaces \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Conclusion}
+
+This geometric viewpoint offers a coherent theoretical lens to:
+
+\begin{itemize}
+    \item Understand why deep networks perform well.
+    \item Justify architectural choices such as residual connections and depth.
+    \item Extend learning to complex domains via symmetry and geometry-aware designs.
+\end{itemize}
+
+\noindent For more, see: \url{https://arxiv.org/abs/1710.10784} (Dong et al., 2017).
+
+\end{document}
