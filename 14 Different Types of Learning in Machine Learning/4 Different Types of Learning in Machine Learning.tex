@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Summary of \\
+\textit{14 Different Types of Learning in Machine Learning}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\url{https://machinelearningmastery.com/14-different-types-of-learning-in-machine-learning/}
+
+\section{Introduction}
+
+The article ``14 Different Types of Learning in Machine Learning'' by Jason Brownlee presents a comprehensive taxonomy of learning strategies used in machine learning. These methods are classified based on how data is used, the form of supervision, the task at hand, and the system's interaction with data. Understanding these paradigms is essential for developing intelligent systems that can adapt, learn, and generalize effectively.
+
+\section{Detailed Overview of Learning Types}
+
+\begin{enumerate}
+    \item \textbf{Supervised Learning} \\
+    In supervised learning, the model is trained on a labeled dataset, meaning each training example includes the desired output. The goal is to learn a mapping function from inputs to outputs. It is primarily used in:
+    \begin{itemize}
+        \item \textit{Classification}: Predicting discrete labels.
+        \item \textit{Regression}: Predicting continuous values.
+    \end{itemize}
+    Examples: Decision Trees, Support Vector Machines, Neural Networks.
+
+    \item \textbf{Unsupervised Learning} \\
+    Unsupervised learning involves analyzing data without labeled responses. The goal is to identify hidden patterns or intrinsic structures:
+    \begin{itemize}
+        \item \textit{Clustering}: Grouping similar data points (e.g., K-Means).
+        \item \textit{Dimensionality Reduction}: Reducing input variables (e.g., PCA, t-SNE).
+    \end{itemize}
+
+    \item \textbf{Semi-Supervised Learning} \\
+    A hybrid approach that uses a small amount of labeled data combined with a large amount of unlabeled data. This method is useful when labeling data is expensive or time-consuming.
+
+    \item \textbf{Self-Supervised Learning} \\
+    This technique generates labels automatically from the data itself. It is often used in pretraining models in vision and NLP tasks. Notable methods include:
+    \begin{itemize}
+        \item \textit{Contrastive Learning}: Learning representations by comparing positive and negative sample pairs.
+        \item \textit{Masked Modeling}: Predicting missing parts of the input (e.g., BERT, MAE).
+    \end{itemize}
+
+    \item \textbf{Reinforcement Learning} \\
+    The agent learns by interacting with an environment and receiving rewards or penalties. The agent aims to maximize cumulative rewards over time. It involves:
+    \begin{itemize}
+        \item \textit{Exploration vs. Exploitation} trade-off.
+        \item \textit{Markov Decision Processes (MDPs)} as a mathematical framework.
+    \end{itemize}
+    Used in game AI, robotics, and autonomous control.
+
+    \item \textbf{Multi-Instance Learning} \\
+    In this framework, the training data consists of bags of instances. Labels are assigned to bags rather than individual instances. The model learns to predict labels at the bag level.
+
+    \item \textbf{Online Learning} \\
+    Also known as incremental learning. The model updates itself as new data arrives, which is crucial for systems that must adapt in real-time or handle large-scale streaming data.
+
+    \item \textbf{Active Learning} \\
+    The model actively selects the most informative data points to label, typically by querying a human annotator. It is used when labeling is expensive and the goal is to learn effectively with fewer labeled examples.
+
+    \item \textbf{Transfer Learning} \\
+    Knowledge acquired in solving one problem is reused in a different but related problem. Common in deep learning where large pretrained models (e.g., ResNet, GPT) are fine-tuned on domain-specific data.
+
+    \item \textbf{Ensemble Learning} \\
+    Combines predictions from multiple models to enhance performance, reduce variance, and increase robustness. Main approaches:
+    \begin{itemize}
+        \item \textit{Bagging}: e.g., Random Forests.
+        \item \textit{Boosting}: e.g., XGBoost, AdaBoost.
+        \item \textit{Stacking}: Combining different types of models.
+    \end{itemize}
+
+    \item \textbf{Multi-Task Learning} \\
+    A single model is trained on multiple related tasks simultaneously. This allows the model to share knowledge between tasks and often improves generalization.
+
+    \item \textbf{Inductive Learning} \\
+    The model generalizes from specific training examples to unseen data. It learns a general rule or function from observations.
+
+    \item \textbf{Deductive Learning} \\
+    Based on formal logic. The system applies general rules to deduce new facts or specific outcomes. Often used in expert systems and symbolic AI.
+
+    \item \textbf{Transductive Learning} \\
+    Unlike inductive learning, transductive learning does not attempt to infer a general model. Instead, it tries to predict outputs only for the specific test cases provided during training.
+\end{enumerate}
+
+\section{Conclusion}
+
+The classification of learning types provides essential insights into the landscape of machine learning. Each paradigm offers advantages and trade-offs, and their relevance depends on the context of the problem, the nature of the data, and the goals of the system. This taxonomy is particularly useful when designing intelligent agents, such as in behavioral cloning, where supervised learning or self-supervised learning might serve as foundational strategies, possibly extended by reinforcement learning or transfer learning techniques.
+
+\end{document}

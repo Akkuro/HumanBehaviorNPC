@@ -18,7 +18,7 @@ Il existe de plus en plus de façon d’observer les joueurs et de nourrir un mo
 machine afin de créer des modèles qui pourraient se rapprocher du comportement de l’être humain,
 et ce pour plusieurs jeux (exemple : Doom, Super Mario, etc.). Le but n’étant pas forcément de
 « créer » le meilleur joueur, mais plus de pouvoir créer des bots qui agiront comme des humains. On
-pourrait par exemple penser à des jeux collaboratifs comme Counter-Strike ou autres.  
+pourrait par exemple penser à des jeux collaboratifs comme Counter-Strike ou autres.
 
 **Proposition :** en se basant sur un jeu vidéo **simple** (Pong, Space Invaders, Doom, etc.), tenter de
 concevoir/adapter un module d’observation dudit jeu pour obtenir, via de l’apprentissage machine,
@@ -26,7 +26,7 @@ un prototype de PNJ qui pourrait remplacer le joueur. Il sera important de valid
 réalisant des essais. En fonction des résultats, il serait envisageable de contribuer à la rédaction d’un
 article scientifique.
 
-**Bibliographie / Vidéographie :**  
+**Bibliographie / Vidéographie :**
 
 - <https://tinyurl.com/supermaLrio>
 - <https://tinyurl.com/drivatarforza>
